@@ -1,16 +1,8 @@
 package com.ygback.service.impl;
 
 import com.twilio.Twilio;
-import com.twilio.http.TwilioRestClient;
-import com.twilio.rest.api.v2010.Account;
 import com.twilio.rest.api.v2010.account.Message;
-import com.twilio.rest.api.v2010.account.MessageCreator;
-import com.twilio.type.PhoneNumber;
-import com.ygback.domain.UserAccount;
-import com.ygback.model.UserAccountModel;
-import com.ygback.repositories.UserAccountRepository;
 import com.ygback.service.MessageService;
-import com.ygback.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -38,6 +30,6 @@ public class TwilioServiceImpl implements MessageService {
                         pinCode.toString())
                 .create();
 
-        return "Message has been sent successfully";
+        return message.getSid();
     }
 }
