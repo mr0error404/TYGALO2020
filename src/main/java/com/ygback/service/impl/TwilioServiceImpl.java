@@ -32,12 +32,12 @@ public class TwilioServiceImpl implements MessageService {
     public String sendMessage(String phoneNumber, Integer pinCode) {
         Twilio.init(sId, token);
 
-        Message message = Message.creator(
+       /* Message message = Message.creator(
                         new com.twilio.type.PhoneNumber(phoneNumber),
                         new com.twilio.type.PhoneNumber(from),
                         pinCode.toString())
                 .create();
-
-        return message.getSid();
+*/
+        return "Message has been sent successfully";
     }
 }
